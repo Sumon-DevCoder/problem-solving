@@ -57,3 +57,31 @@ function sortCarsByYear(carsArray) {
 }
 
 const sortedCars = sortCarsByYear(cars);
+
+// 5.Task: Find and Modify
+// Write a function that searches an array of objects for a specific person by name. If found, modify their age property. Print the updated array.
+function findAndModify(array, name, newAge) {
+  let personFound = false;
+
+  array.forEach((person) => {
+    if (person.name === name) {
+      person.age = newAge;
+      personFound = true;
+    }
+  });
+
+  if (personFound) {
+    console.log("Updated array:", array);
+  } else {
+    console.log(`Person with name "${name}" not found.`);
+  }
+}
+
+// Example usage:
+const person = [
+  { name: "hamid vai", age: 19 },
+  { name: "subho vai", age: 24 },
+  { name: "mir vai", age: 21 },
+];
+
+findAndModify(person, "subho vai", 25);
